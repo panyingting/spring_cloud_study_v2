@@ -1,6 +1,6 @@
 package com.pyt.study.feign.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.netflix.discovery.EurekaClient;
 import com.pyt.study.bean.User;
 import com.pyt.study.feign.service.FeignService;
 import org.slf4j.Logger;
@@ -27,6 +27,8 @@ public class ConsumerController {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    private EurekaClient eurekaClient;
 
 
     @RequestMapping("/consumer")

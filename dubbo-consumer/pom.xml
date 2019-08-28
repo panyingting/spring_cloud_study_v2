@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-cloud</artifactId>
+        <groupId>com.pyt</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.pyt</groupId>
+    <artifactId>dubbo-consumer</artifactId>
+
+
+    <dependencies>
+        <!-- 整合dubbo -->
+        <dependency>
+            <groupId>io.dubbo.springboot</groupId>
+            <artifactId>spring-boot-starter-dubbo</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- zookeeper客户端 -->
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.pyt</groupId>
+            <artifactId>dubboe-provider</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--————————————————-->
+        <!--版权声明：本文为CSDN博主「赏花同学」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。-->
+        <!--原文链接：https://blog.csdn.net/weixin_41843053/article/details/83687289-->
+    </dependencies>
+</project>

@@ -12,6 +12,8 @@
         <module>eureka-client1</module>
         <module>eureka-client2</module>
         <module>feign</module>
+        <module>dubboe-provider</module>
+        <module>dubbo-consumer</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
