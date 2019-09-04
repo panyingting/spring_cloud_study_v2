@@ -14,6 +14,9 @@
         <module>feign</module>
         <module>dubboe-provider</module>
         <module>dubbo-consumer</module>
+        <module>common-study</module>
+        <module>common-client</module>
+        <module>study-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -1,6 +1,6 @@
 package com.pyt.eureka.client2.controller;
 
-import com.pyt.study.bean.User;
+import com.my.study.beans.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

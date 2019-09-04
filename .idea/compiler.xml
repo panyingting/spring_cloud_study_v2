@@ -6,12 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common-client" />
+        <module name="common-study" />
         <module name="dubbo-consumer" />
         <module name="dubboeprovider" />
         <module name="eurekaclient1" />
         <module name="eurekaclient2" />
         <module name="eurekaserver" />
         <module name="feign" />
+        <module name="study-common" />
       </profile>
     </annotationProcessing>
   </component>
