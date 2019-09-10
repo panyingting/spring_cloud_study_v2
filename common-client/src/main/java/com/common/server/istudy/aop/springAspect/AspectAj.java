@@ -4,6 +4,7 @@ import com.common.server.istudy.aop.springAspect.annotation.MyAspectAnnotation;
 import org.springframework.stereotype.Service;
 
 @Service
+@MyAspectAnnotation
 public class AspectAj {
 
     @MyAspectAnnotation

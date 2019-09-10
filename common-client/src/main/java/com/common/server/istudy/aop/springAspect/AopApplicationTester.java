@@ -21,12 +21,15 @@ public class AopApplicationTester {
    @Test
    public void testAspectAj(){
 
-       System.out.println("\n");
+       System.out.println("\n========== process ===============\n\n");
        aspectAj.process(12);
-       System.out.println("\n");
 
+       System.out.println("\n========== enhanceMethod2 ===============\n\n");
        aspectAj.enhanceMethod2(13);
 
-       System.out.println("\n");
+       System.out.println("\n========== toString ===============\n\n");
+
+       System.out.println("toString:"+aspectAj.toString());
+       System.out.println("\n========== end ===============\n\n");
    }
 }
