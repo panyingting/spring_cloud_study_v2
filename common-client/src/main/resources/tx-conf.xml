@@ -31,15 +31,7 @@
     </aop:config>
 
     <!-- 数据元信息 -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/my_db_pyt"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-    </bean>
-
-    <!-- 数据元信息 -->
-    <bean id="driverManagerDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+    <bean id="dataSource01" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/my_db_pyt"/>
         <property name="username" value="root"/>
@@ -48,16 +40,7 @@
 
     <!-- 管理事务的类-->
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="dataSource01"/>
     </bean>
     <!-- other <bean/> definitions here -->
-
-    <bean id="userBean001" class="com.common.study.bean.UserBean" autowire="byName">
-        <property name="dataSource" ref="driverManagerDataSource"/>
-        <property name="age" value="1" />
-        <property name="name" value="1" />
-    </bean>
-
-    <!--<context:component-scan>:不仅具备<context:annotation-config>的所有功能（配置 annotation-config 为 true 或不配，默认也为 true），还可以在指定的package下面扫描对应的bean-->
-    <context:component-scan base-package="com.common.server.istudy.aop.cglib.*" annotation-config="true"/>
 </beans>

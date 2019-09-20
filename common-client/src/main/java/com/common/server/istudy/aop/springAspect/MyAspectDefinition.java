@@ -61,7 +61,7 @@ public class MyAspectDefinition {
         System.out.println("@within after");
         return obj;
     }
-    @Around("@target(com.common.server.istudy.aop.springAspect.annotation.MyAspectAnnotation )")
+
     public Object withinProcess2(ProceedingJoinPoint process) throws Throwable {
 
         System.out.println("@target before");
@@ -70,7 +70,7 @@ public class MyAspectDefinition {
         return obj;
     }
 
-    @Before("execution(* com.common.server.istudy.aop.springAspect.AspectAj.enhanceMethod2(..)) && args(i))")
+    @After("execution(* com.common.server.istudy.aop.springAspect.AspectAj.enhanceMethod2(..)) && args(i))")
     public void doBefore2(int i){
         System.out.println("Do before invoke Method."+i);
     }
