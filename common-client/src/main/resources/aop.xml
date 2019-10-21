@@ -30,7 +30,7 @@
         <aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
     </aop:config>
 
-    <!-- 数据元信息 -->
+    <!-- 数据源信息 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/my_db_pyt"/>
@@ -38,7 +38,7 @@
         <property name="password" value="root"/>
     </bean>
 
-    <!-- 数据元信息 -->
+    <!-- 数据源信息 -->
     <bean id="driverManagerDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/my_db_pyt"/>

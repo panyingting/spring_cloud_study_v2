@@ -18,4 +18,18 @@
         FROM Result
         WHERE score = #{score}
     </select>
+
+    <update id="updateResult10">
+        <![CDATA[
+        update Result set score = score - 1 where s_id < 3
+      ]]>
+    </update>
+
+    <update id="updateResult5">
+        <![CDATA[
+        update Result set score = score - 1 where s_id < 2
+      ]]>
+    </update>
 </mapper>
+
+

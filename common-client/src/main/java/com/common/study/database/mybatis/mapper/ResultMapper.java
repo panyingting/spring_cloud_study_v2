@@ -7,4 +7,8 @@ import java.util.List;
 public interface ResultMapper {
 
     public List<Result> queryByScore(int score);
+
+    public int updateResult10();
+
+    public int updateResult5();
 }

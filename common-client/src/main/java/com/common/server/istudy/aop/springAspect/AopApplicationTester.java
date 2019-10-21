@@ -4,6 +4,7 @@ import com.common.server.istudy.aop.bean.PureBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cglib.core.DebuggingClassWriter;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -25,22 +26,24 @@ public class AopApplicationTester {
    @Test
    public void testAspectAj(){
 
+       System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "target/cglib");
+
        System.out.println("\n\nClassInfo:"+ aspectAj.getClass() + "  "+pureBean.getClass());
        System.out.println("\n========== process ===============\n\n");
        aspectAj.process(12);
        System.out.println("aspectAj:"+aspectAj.getClass());
 
-
-       System.out.println("\n========== toString ===============\n\n");
-
-       System.out.println("toString:"+aspectAj.toString());
-
-       System.out.println("\n=======Pure Bean =========");
-
-       pureBean.f();
-       System.out.println("\n========== enhanceMethod2 ===============\n\n");
-       aspectAj.enhanceMethod2(13);
-
-       System.out.println("\n========== end ===============\n\n");
+//
+//       System.out.println("\n========== toString ===============\n\n");
+//
+//       System.out.println("toString:"+aspectAj.toString());
+//
+//       System.out.println("\n=======Pure Bean =========");
+//
+//       pureBean.f();
+//       System.out.println("\n========== enhanceMethod2 ===============\n\n");
+//       aspectAj.enhanceMethod2(13);
+//
+//       System.out.println("\n========== end ===============\n\n");
    }
 }
