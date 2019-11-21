@@ -24,7 +24,7 @@ public class Reactor {
     private void init() throws IOException {
         serverSocketChannel.configureBlocking(false);
 //        serverSocketChannel.bind(new InetSocketAddress(8081));
-        serverSocketChannel.socket().bind(new InetSocketAddress(8082));
+        serverSocketChannel.socket().bind(new InetSocketAddress(8006));
         SelectionKey selectionKey = serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         selectionKey.attach(new AcceptHandler(serverSocketChannel, selector));
     }

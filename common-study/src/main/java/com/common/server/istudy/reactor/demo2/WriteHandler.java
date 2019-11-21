@@ -30,9 +30,13 @@ public class WriteHandler implements Runnable {
         try {
             System.out.println("通道关闭！");
             channel.write(buffer);
-            selectionKey.selector();
-            channel.register(selectionKey.selector(), SelectionKey.OP_READ);
-            selectionKey.attach(new ReadHandler(selectionKey.selector(), channel));
+//            selectionKey.selector();
+
+            channel.register(selectionKey.selector(), SelectionKey.OP_WRITE);
+            selectionKey.attach(new WriteHandler(channel, selectionKey));
+
+//            channel.register(selectionKey.selector(), SelectionKey.OP_READ);
+//            selectionKey.attach(new ReadHandler(selectionKey.selector(), channel));
 //            channel.close();
 //            selectionKey.cancel();
 

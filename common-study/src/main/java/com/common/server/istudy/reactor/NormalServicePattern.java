@@ -12,7 +12,7 @@ public class NormalServicePattern implements Runnable {
     @Override
     public void run() {
         try {
-            ServerSocket serverSocket = new ServerSocket(8080);
+            ServerSocket serverSocket = new ServerSocket(8082);
             while (true) {
                 Socket socket = serverSocket.accept();
 

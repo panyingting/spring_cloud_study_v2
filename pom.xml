@@ -17,6 +17,7 @@
         <module>common-study</module>
         <module>common-client</module>
         <module>study-common</module>
+        <module>study-kafka</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

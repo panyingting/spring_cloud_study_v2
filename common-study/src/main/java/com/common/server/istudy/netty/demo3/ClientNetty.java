@@ -47,7 +47,7 @@ public class ClientNetty {
                         // 处理来自服务端的响应信息
                         socketChannel.pipeline().addLast(new ClientRead2Handler());
                         socketChannel.pipeline().addLast(new ClientRead1Handler());
-                        socketChannel.pipeline().addLast(new ClientWriteHandler());
+//                        socketChannel.pipeline().addLast(new ClientWriteHandler());
                     }
                 });
 
@@ -59,7 +59,7 @@ public class ClientNetty {
 
             // 发送客户端的请求
             String reqStr = "我是客户端" + i + "号===";
-            cf.channel().writeAndFlush(Unpooled.copiedBuffer(reqStr.getBytes("utf-8")));
+//            cf.channel().writeAndFlush(Unpooled.copiedBuffer(reqStr.getBytes("utf-8")));
 
         }
         // 等待直到连接中断

@@ -24,9 +24,13 @@ public class AcceptHandler implements Runnable {
             SocketChannel socketChannel = ssc.accept();
             ssc.close();
             socketChannel.configureBlocking(false);
-            SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ);
-            selectionKey.attach(new ReadHandler(selector, socketChannel));
+//            SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ);
+//            selectionKey.attach(new ReadHandler(selector, socketChannel));
+            SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_WRITE);
 
+            selectionKey.attach(new WriteHandler(socketChannel, selectionKey));
+
+//            selector.wakeup();
             System.out.println("接收到新的连接成功！");
 
 

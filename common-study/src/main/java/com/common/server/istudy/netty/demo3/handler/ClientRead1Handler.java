@@ -12,6 +12,7 @@ import io.netty.util.ReferenceCountUtil;
  */
 public class ClientRead1Handler extends ChannelInboundHandlerAdapter {
 
+    private static  int num = 0;
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 
@@ -22,9 +23,12 @@ public class ClientRead1Handler extends ChannelInboundHandlerAdapter {
             String respStr = new String(respByte, "utf-8");
             System.out.println("client-1--收到响应：" + respStr);
 
+            if(num ++ > 10){
+                Thread.sleep(5000L);
+            }
             if (!respStr.contains("1008611")) {
                 System.out.println("再次回复服务端...");
-                ctx.writeAndFlush(Unpooled.copiedBuffer("1008611".getBytes()));
+//                ctx.writeAndFlush(Unpooled.copiedBuffer("1008611".getBytes()));
             }
         } finally {
             // 必须释放msg数据
