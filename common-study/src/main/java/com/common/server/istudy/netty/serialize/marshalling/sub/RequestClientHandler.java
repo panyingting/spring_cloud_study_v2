@@ -24,7 +24,9 @@ public class RequestClientHandler extends ChannelInboundHandlerAdapter {
         for (int i = 0; i < 5; i++) {
             RequestBean bean = generatorRequestBean(i);
             System.out.println("Client really send data to Server:" + bean);
-            ctx.writeAndFlush(bean);
+            TestAnnotation testAnnotation = RequestClientHandler.class.getMethod("f").getAnnotation(TestAnnotation.class);
+//            ctx.writeAndFlush(bean);
+            ctx.writeAndFlush(testAnnotation);
         }
     }
 
@@ -69,6 +71,9 @@ public class RequestClientHandler extends ChannelInboundHandlerAdapter {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         super.exceptionCaught(ctx, cause);
     }
+
+    @TestAnnotation()
+    public static void f(){}
 }
 // ————————————————
 //         版权声明：本文为CSDN博主「贾红平」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。

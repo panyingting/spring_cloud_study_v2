@@ -37,12 +37,12 @@ public class RequestServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("读取数据信息：" + msg);
-        RequestBean requestBean = (RequestBean) msg;
-        if (requestBean.getUserName().equals("jhp")) {
-            System.out.println("Service accept client subscrib req : ["
-                    + requestBean.toString() + "]");
-            ctx.writeAndFlush(genertorResponseBean(requestBean.getSubReqID()));
-        }
+        TestAnnotation requestBean = (TestAnnotation) msg;
+//        if (requestBean.getUserName().equals("jhp")) {
+//            System.out.println("Service accept client subscrib req : ["
+//                    + requestBean.toString() + "]");
+//            ctx.writeAndFlush(genertorResponseBean(requestBean.getSubReqID()));
+//        }
     }
 
     /**
