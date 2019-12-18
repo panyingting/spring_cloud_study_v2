@@ -26,12 +26,14 @@ public class AopApplicationTester {
    @Test
    public void testAspectAj(){
 
-       System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "target/cglib");
+//       System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "target/cglib");
 
        System.out.println("\n\nClassInfo:"+ aspectAj.getClass() + "  "+pureBean.getClass());
        System.out.println("\n========== process ===============\n\n");
        aspectAj.process(12);
        System.out.println("aspectAj:"+aspectAj.getClass());
+
+//       aspectAj.enhanceMethod2("1212");
 
 //
 //       System.out.println("\n========== toString ===============\n\n");

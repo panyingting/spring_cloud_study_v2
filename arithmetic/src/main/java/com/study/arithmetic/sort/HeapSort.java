@@ -1,4 +1,4 @@
-package com.study.arithmetic;
+package com.study.arithmetic.sort;
 
 public class HeapSort {
 

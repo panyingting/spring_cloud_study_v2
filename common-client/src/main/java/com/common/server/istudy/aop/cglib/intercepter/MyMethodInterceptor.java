@@ -21,8 +21,8 @@ public class MyMethodInterceptor implements MethodInterceptor {
 
 //        method.invoke(sub, objects);  这么调用出现异常
 
-//        Object object = methodProxy.invokeSuper(sub, objects);
-        Object object2 = methodProxy.invoke(sub, objects);
+        Object object = methodProxy.invokeSuper(sub, objects);
+//        Object object2 = methodProxy.invoke(sub, objects);
         System.out.println("======插入后者通知======");
         return null;
     }
