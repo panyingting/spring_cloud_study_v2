@@ -39,6 +39,50 @@ public class QuickSort {
         doSort(arr, highIndex, end);
     }
 
+
+//    /**
+//     * 以下代码也已走通
+//     * 坑： begin 直接等于 left, 导致 targetIndex = begin - 1 越下界了；
+//     * 2. 递归调用的时候用了 pivotIndex ， 应该用 targetIndex （新的 pivotIndex），
+//     */
+//    private static int findMiddleIndex(int[] arr, int left, int right, int pivotIndex){
+//
+//        if(left >= right)
+//            return 0;
+//        int begin = left+1;
+//        int end = right;
+//        int pivot = arr[pivotIndex];
+//        int targetIndex = end;
+//
+//        for(; begin<=end; begin++){
+//
+//            if(arr[begin] >= pivot){
+//
+//                targetIndex = begin-1;
+//                while(end >= begin){
+//
+//                    if(arr[end] < pivot){
+//                        int tmp = arr[begin];
+//                        arr[begin] = arr[end];
+//                        arr[end] = tmp;
+//                        targetIndex = end - 1;
+//                        break;
+//                    }
+//                    end --;
+//                }
+//            }
+//        }
+//
+//        arr[pivotIndex] = arr[targetIndex];
+//        arr[targetIndex] = pivot;
+//
+//
+//        findMiddleIndex(arr, left, targetIndex-1 , left);
+//        findMiddleIndex(arr,  targetIndex+1,  right, targetIndex+1);
+//
+//        return targetIndex;
+//    }
+
     public static void main(String[] args) {
         int[] arr = {1,4,6,8,0,12,14,65,111,45,43,23,4,22,54, 1,4,6,8,9,0,12,14,65,111,45,43,23,4,22,54,1,4,6,8,9,0,12,14,65,111,45,9,0,12,14,65,111,45,43,23,4,22,54, 1,4,6,8,9,0,12,14,65,111,45,43,23,4,22,54,1,4,6,8,9,0,12,14,65,111,45,43,23,4,22,54, 1,4,6,8,9,0};
         QuickSort.sort(arr);
