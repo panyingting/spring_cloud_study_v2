@@ -1,12 +1,29 @@
 package com.study.arithmetic.sort;
 
-import java.util.Arrays;
-
 public class BFPRTSort {
 
-    public static void sort(int[] arr){
+    public static int findNum(int[] arr, int topFromNum){
 
 
+        int pivotIndex = -1;
+        int [] tmpArr = new int[arr.length/5 +1];
+
+        int left = 0;
+        int right = arr.length-1;
+        do{
+
+            // 不能包含 pivotIndex, 否则死循环
+            if(pivotIndex > topFromNum){
+                right = pivotIndex-1;
+            }
+            else if(pivotIndex != -1){
+                left = pivotIndex + 1;
+            }
+            pivotIndex = divideByMiddleIndex(arr, tmpArr, left, right);
+
+        }while (pivotIndex != topFromNum);
+
+        return arr[pivotIndex];
     }
 
 
@@ -14,64 +31,73 @@ public class BFPRTSort {
      * 坑： begin 直接等于 left, 导致 targetIndex = begin - 1 越下界了；
      * 2. 递归调用的时候用了 pivotIndex ， 应该用 targetIndex （新的 pivotIndex），
      */
-    private static int findMiddleIndex(int[] arr, int left, int right, int pivotIndex){
+    private static int divideByMiddleIndex(int[] arr, int tmpArr[], int left, int right){
 
-        if(left >= right)
-            return 0;
-        int begin = left+1;
+        if(left == right)
+            return left;
+
+
+        int begin = left;
         int end = right;
-        int pivot = arr[pivotIndex];
-        int targetIndex = end;
+
+        int pivot = findMiddle( arr, tmpArr, left, right);
+
+        for(int i=left; i<=right; i++){
+            if(arr[i] == pivot){
+                arr[i] = arr[right];
+                arr[right] = pivot;
+            }
+        }
 
         for(; begin<=end; begin++){
 
             if(arr[begin] >= pivot){
-
-                targetIndex = begin-1;
-                while(end >= begin){
+                for(;end > begin; end --){
 
                     if(arr[end] < pivot){
-                        int tmp = arr[begin];
-                        arr[begin] = arr[end];
-                        arr[end] = tmp;
-                        targetIndex = end - 1;
+                        int tmp = arr[end];
+                        arr[end] = arr[begin];
+                        arr[begin] = tmp;
                         break;
                     }
-                    end --;
                 }
             }
+            if(begin == end){
+                arr[right] = arr[end];
+                arr[end] = pivot;
+                break;
+            }
+
         }
 
-        arr[pivotIndex] = arr[targetIndex];
-        arr[targetIndex] = pivot;
-
-
-        findMiddleIndex(arr, left, targetIndex-1 , left);
-        findMiddleIndex(arr,  targetIndex+1,  right, targetIndex+1);
-
-        return targetIndex;
+        return end;
     }
 
 
-    public static int findMiddle(int[] arr, int tmp[], int leftIndex, int rightIndex){
+    private static int findMiddle(int[] arr, int tmp[], int leftIndex, int rightIndex){
 
-        int reminder = (rightIndex - leftIndex) % 5;
-        int length = reminder == 0 ? (rightIndex - leftIndex) / 5 : (rightIndex - leftIndex) / 5 + 1;
+        if(leftIndex == rightIndex)
+            return arr[leftIndex];
+
+        int reminder = (rightIndex - leftIndex + 1) % 5;
+        int length = reminder == 0 ? (rightIndex - leftIndex+1) / 5 : (rightIndex - leftIndex+1) / 5 + 1;
 
         int index = 0;
         int i = leftIndex;
-        for(; i <= rightIndex-5; i+=5){
+        for(; i <= rightIndex-4; i+=5){
             tmp[index++] = findMiddleForSingleGroup(arr, i, i+4);
         }
-        if(length > index){
+        if(index == length-1){
             tmp[index] = findMiddleForSingleGroup( arr, i , rightIndex);
         }
 
-        return findMiddleForSingleGroup(tmp, 0, length);
+        return findMiddleForSingleGroup(tmp, 0, length-1);
     }
 
     private static int findMiddleForSingleGroup(int[] arr, int leftIndex, int rightIndex){
 
+        if(leftIndex == rightIndex)
+            return arr[leftIndex];
         for(int i = leftIndex+1; i <= rightIndex; i++){
 
             int tmp = arr[i];
@@ -83,16 +109,14 @@ public class BFPRTSort {
             arr[j+1] = tmp;
         }
 
-        int middleIndex = (leftIndex + rightIndex) % 2;
-        middleIndex = middleIndex == 0 ? (leftIndex + rightIndex) / 2 : (leftIndex + rightIndex) / 2 +1;
+        int middleIndex = (leftIndex + rightIndex) / 2 ;
         return arr[ middleIndex];
     }
 
     public static void main(String[] args) {
-        int[] arr = {1,4,6,8,9,0,12,14,65,111,45,43,23,4,22,54, 1,4,6,8,9,0,12,14,65,111,3,3,3,3,3,3,3,45,43,23,4,22,54,1,4,6,8,9,0,12,14,65,111,45,43,23,4,22,54, 1,4,6,8,9,0};
-//        BFPRTSort.findMiddleForSingleGroup(arr, 0, arr.length-1);
-        BFPRTSort.findMiddleIndex(arr, 0, arr.length-1, 0);
-        System.out.println(Arrays.toString(arr));
+        int[] arr = {1,10,9,2,8,3,4,7,5,6,11,20,19,18,17,16,15,14,13,12};
+        int num = BFPRTSort.findNum(arr, 19);
+        System.out.println(num);
 
     }
 
