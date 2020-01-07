@@ -1,0 +1,198 @@
+
+"qtp1865127310-2774" prio=5 tid=2774 RUNNABLE
+    at org.apache.xmlbeans.impl.store.Cur.createElementXobj(Cur.java:260)
+       Local Variable: javax.xml.namespace.QName#3856
+    at org.apache.xmlbeans.impl.store.Cur$CurLoadContext.startElement(Cur.java:2997)
+    at org.apache.xmlbeans.impl.store.Locale.loadNode(Locale.java:1420)
+    at org.apache.xmlbeans.impl.store.Locale.loadNodeChildren(Locale.java:1403)
+       Local Variable: com.sun.org.apache.xerces.internal.dom.DeferredElementNSImpl#1883223
+    at org.apache.xmlbeans.impl.store.Locale.loadNode(Locale.java:1445)
+    at org.apache.xmlbeans.impl.store.Locale.loadNodeChildren(Locale.java:1403)
+       Local Variable: com.sun.org.apache.xerces.internal.dom.DeferredElementNSImpl#1385778
+    at org.apache.xmlbeans.impl.store.Locale.loadNode(Locale.java:1445)
+    at org.apache.xmlbeans.impl.store.Locale.loadNodeChildren(Locale.java:1403)
+       Local Variable: com.sun.org.apache.xerces.internal.dom.DeferredElementNSImpl#754383
+    at org.apache.xmlbeans.impl.store.Locale.loadNode(Locale.java:1445)
+    at org.apache.xmlbeans.impl.store.Locale.parseToXmlObject(Locale.java:1385)
+       Local Variable: org.apache.xmlbeans.impl.store.Cur$CurLoadContext#1
+    at org.apache.xmlbeans.impl.store.Locale.parseToXmlObject(Locale.java:1370)
+       Local Variable: org.apache.xmlbeans.impl.store.Locale#5
+    at org.apache.xmlbeans.impl.schema.SchemaTypeLoaderBase.parse(SchemaTypeLoaderBase.java:370)
+       Local Variable: com.sun.org.apache.xerces.internal.dom.DeferredElementNSImpl#754384
+       Local Variable: org.apache.xmlbeans.impl.schema.SchemaTypeLoaderImpl#2
+    at org.apache.poi.POIXMLTypeLoader.parse(POIXMLTypeLoader.java:116)
+       Local Variable: com.sun.org.apache.xerces.internal.dom.DeferredDocumentImpl#1
+       Local Variable: org.apache.xmlbeans.impl.schema.SchemaTypeImpl#1
+    at org.openxmlformats.schemas.spreadsheetml.x2006.main.WorksheetDocument$Factory.parse(<unknown string>)
+       Local Variable: org.apache.xmlbeans.XmlOptions#3
+    at org.apache.poi.xssf.usermodel.XSSFSheet.read(XSSFSheet.java:184)
+       Local Variable: java.io.ByteArrayInputStream#1
+    at org.apache.poi.xssf.usermodel.XSSFSheet.onDocumentRead(XSSFSheet.java:176)
+    at org.apache.poi.xssf.usermodel.XSSFWorkbook.parseSheet(XSSFWorkbook.java:428)
+       Local Variable: org.apache.poi.xssf.usermodel.XSSFSheet#1
+    at org.apache.poi.xssf.usermodel.XSSFWorkbook.onDocumentRead(XSSFWorkbook.java:393)
+       Local Variable: java.util.HashMap#5314
+       Local Variable: org.openxmlformats.schemas.spreadsheetml.x2006.main.CTSheet[]#1
+       Local Variable: java.util.HashMap#5315
+       Local Variable: org.openxmlformats.schemas.spreadsheetml.x2006.main.impl.WorkbookDocumentImpl#1
+       Local Variable: org.apache.poi.xssf.model.ThemesTable#1
+       Local Variable: org.openxmlformats.schemas.spreadsheetml.x2006.main.impl.CTSheetImpl#1
+    at org.apache.poi.POIXMLDocument.load(POIXMLDocument.java:190)
+       Local Variable: java.util.HashMap#5316
+       Local Variable: org.apache.poi.xssf.usermodel.XSSFFactory#1
+    at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:290)
+       Local Variable: org.apache.poi.xssf.usermodel.XSSFWorkbook#1
+    at com.babyfs.op.controller.util.ExcelParser.parseRows(ExcelParser.java:62)
+       Local Variable: java.util.HashMap#5317
+       Local Variable: java.util.ArrayList#523841
+    at com.babyfs.op.controller.util.ExcelParser.parseRows(ExcelParser.java:117)
+       Local Variable: class com.babyfs.service.point.model.PointExcelModel
+    at com.babyfs.op.controller.point.PointController.excelParser(PointController.java:358)
+       Local Variable: java.util.ArrayList#523840
+    at com.babyfs.op.controller.point.PointController.excelOperate(PointController.java:197)
+       Local Variable: java.io.FileInputStream#8
+       Local Variable: org.springframework.web.multipart.commons.CommonsMultipartFile#1
+    at com.babyfs.op.controller.point.PointController$$FastClassBySpringCGLIB$$f61d94ab.invoke(<generated>)
+    at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+       Local Variable: org.springframework.cglib.proxy.MethodProxy#271
+    at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+    at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+    at com.babyfs.op.interceptor.ResourcePermAspect.verify(ResourcePermAspect.java:98)
+    at sun.reflect.GeneratedMethodAccessor125.invoke(<unknown string>)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+       Local Variable: org.springframework.aop.aspectj.AspectJAroundAdvice#4
+    at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+    at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+    at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:52)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+    at com.babyfs.op.interceptor.LogAspect.doAround(LogAspect.java:119)
+       Local Variable: com.babyfs.op.interceptor.LogAspect#1
+    at sun.reflect.GeneratedMethodAccessor112.invoke(<unknown string>)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+       Local Variable: org.springframework.aop.aspectj.AspectJAroundAdvice#1
+    at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+    at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:43)
+       Local Variable: org.springframework.aop.aspectj.AspectJAfterAdvice#1
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+    at com.babyfs.tk.metrics.JettyWebMetricsAspect.metrics(JettyWebMetricsAspect.java:56)
+       Local Variable: com.babyfs.tk.metrics.JettyWebMetricsAspect#1
+    at sun.reflect.GeneratedMethodAccessor111.invoke(<unknown string>)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+       Local Variable: org.springframework.aop.aspectj.AspectJAroundAdvice#2
+    at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+    at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+    at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+    at com.babyfs.op.interceptor.RequestLogAspect.internalAccess(RequestLogAspect.java:41)
+    at sun.reflect.GeneratedMethodAccessor110.invoke(<unknown string>)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+       Local Variable: org.springframework.aop.aspectj.AspectJAroundAdvice#3
+    at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+    at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+    at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+    at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+       Local Variable: java.lang.reflect.Method#18746
+       Local Variable: org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor#22
+       Local Variable: com.babyfs.op.controller.point.PointController#1
+    at com.babyfs.op.controller.point.PointController$$EnhancerBySpringCGLIB$$4a6eb9d7.excelOperate(<generated>)
+    at sun.reflect.GeneratedMethodAccessor376.invoke(<unknown string>)
+       Local Variable: com.babyfs.op.controller.point.PointController$$EnhancerBySpringCGLIB$$4a6eb9d7#1
+       Local Variable: sun.reflect.GeneratedMethodAccessor376#1
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+       Local Variable: java.lang.Object[]#592735
+    at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+    at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:111)
+       Local Variable: org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod#1
+    at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:806)
+       Local Variable: org.springframework.web.context.request.ServletWebRequest#1
+       Local Variable: org.springframework.web.method.annotation.ModelFactory#1
+       Local Variable: org.springframework.web.method.support.ModelAndViewContainer#1
+       Local Variable: org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#1
+    at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:729)
+    at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+    at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+       Local Variable: org.springframework.web.servlet.HandlerExecutionChain#1
+       Local Variable: org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest#1
+    at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+    at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+       Local Variable: org.springframework.web.context.request.ServletRequestAttributes#1
+       Local Variable: org.springframework.web.context.request.async.WebAsyncManager#1
+       Local Variable: com.babyfs.tk.service.biz.web.GuiceDispatcherServlet#1
+    at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+    at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:848)
+    at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1780)
+    at com.babyfs.tk.service.biz.web.backend.LogFilter.doFilter(LogFilter.java:99)
+    at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1767)
+    at com.babyfs.tk.web.filters.AccessLogFilter.doFilterInternal(AccessLogFilter.java:64)
+       Local Variable: com.babyfs.tk.web.filters.AccessLogFilter#1
+       Local Variable: com.babyfs.tk.web.cache.CachedHttpServletRequestWrapper#1
+       Local Variable: com.babyfs.tk.web.cache.CachedHttpServletResponseWrapper#1
+    at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+       Local Variable: java.lang.String#5254439
+    at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1767)
+    at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+    at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+       Local Variable: java.lang.String#5254433
+    at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1759)
+    at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+       Local Variable: org.eclipse.jetty.servlet.ServletHolder#1
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+       Local Variable: org.eclipse.jetty.security.ConstraintSecurityHandler#1
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:513)
+       Local Variable: javax.servlet.DispatcherType#1
+    at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+       Local Variable: org.eclipse.jetty.server.session.SessionHandler#1
+       Local Variable: org.eclipse.jetty.server.session.HashedSession#1
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+       Local Variable: java.lang.String#11317
+       Local Variable: org.eclipse.jetty.webapp.WebAppContext#1
+       Local Variable: org.eclipse.jetty.start.Classpath$Loader#1
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:213)
+       Local Variable: org.eclipse.jetty.server.handler.ContextHandlerCollection#1
+       Local Variable: org.eclipse.jetty.server.handler.ContextHandlerCollection$Branch[]#3
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:119)
+       Local Variable: java.lang.String#5254432
+       Local Variable: org.eclipse.jetty.server.handler.HandlerCollection#1
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+    at org.eclipse.jetty.server.Server.handle(Server.java:539)
+       Local Variable: org.eclipse.jetty.server.Request#2
+       Local Variable: org.eclipse.jetty.server.Response#2
+    at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:333)
+       Local Variable: org.eclipse.jetty.server.HttpChannelOverHttp#2
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+       Local Variable: org.eclipse.jetty.server.HttpConnection#2
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:283)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:108)
+    at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+    at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+       Local Variable: org.eclipse.jetty.io.SelectChannelEndPoint$2#2
+    at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+    at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+       Local Variable: org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume#1

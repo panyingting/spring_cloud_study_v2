@@ -16,8 +16,10 @@
         <module name="eurekaserver" />
         <module name="feign" />
         <module name="study-common" />
-        <module name="study-kafka" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="study-kafka" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
