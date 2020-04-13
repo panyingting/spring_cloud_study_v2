@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Client {
 
-    @Reference(version = "1.0.0",timeout = 300)
+    @Reference
     private TestService testService;
 
     @RequestMapping("/invoke")

@@ -13,7 +13,7 @@ public class ProducerDemo {
 
         String topicName = "test_topic_02";
         Properties properties = new Properties();
-        properties.put("bootstrap.servers", "10.10.10.12:9092");
+        properties.put("bootstrap.servers", "1000.200.100012:9092");
         properties.put("acks", "all");
         properties.put("retries", 0);
         properties.put("batch.size", 16384);

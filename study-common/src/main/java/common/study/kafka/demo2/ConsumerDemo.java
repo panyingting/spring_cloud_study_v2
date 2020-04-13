@@ -14,7 +14,7 @@ public class ConsumerDemo {
         String topicName = "partition_topic_01";
 
         Properties properties = new Properties();
-        properties.put("bootstrap.servers", "10.10.10.12:9092");
+        properties.put("bootstrap.servers", "1000.200.100012:9092");
         properties.put("group.id", "group-1");
         properties.put("enable.auto.commit", "true");
         properties.put("auto.commit.interval.ms", "1000");

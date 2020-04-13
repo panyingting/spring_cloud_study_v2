@@ -3,7 +3,7 @@ package common.study.kafka.demo2;
 
 public class Main {
     public static void main(String[] args) {
-        String url = "10.10.10.12:9092";
+        String url = "1000.200.100012:9092";
         String topic = "test_topic_02";
 
         //生产者

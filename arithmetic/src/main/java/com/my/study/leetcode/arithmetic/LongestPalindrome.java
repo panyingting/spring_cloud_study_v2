@@ -1,4 +1,4 @@
-package com.study.arithmetic.letcode;
+package com.my.study.leetcode.arithmetic;
 
 /**
  * 中心扩散法则，检查越界，注意subString的两个参数对应的意思

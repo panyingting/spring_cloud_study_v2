@@ -17,7 +17,7 @@ public class KafkaConsume {
     KafkaConsume(String url) {
         properties = new Properties();
         properties.put("bootstrap.servers", url);
-        properties.put("zookeeper.connect", "10.10.10.12:2179,10.10.10.12:2180,10.10.10.12:2181");
+        properties.put("zookeeper.connect", "1000.200.100012:2179,1000.200.100012:2180,1000.200.100012:2181");
         properties.put("group.id", "group-1");
         properties.put("zookeeper.session.timeout.ms", "4000");
         properties.put("zookeeper.sync.time.ms", "200");
@@ -55,7 +55,7 @@ public class KafkaConsume {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        String url = "10.10.10.12:9092";
+        String url = "1000.200.100012:9092";
         String topic = "partition_topic_01";
         //消费者
         KafkaConsume kc = new KafkaConsume(url);

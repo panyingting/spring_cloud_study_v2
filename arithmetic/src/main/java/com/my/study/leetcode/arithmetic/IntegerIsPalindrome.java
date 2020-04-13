@@ -1,4 +1,4 @@
-package com.study.arithmetic.letcode;
+package com.my.study.leetcode.arithmetic;
 
 public class IntegerIsPalindrome {
 

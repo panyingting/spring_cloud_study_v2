@@ -4,7 +4,7 @@ package com.study.dubbo.server.demo.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.study.dubbo.server.demo.TestService;
 
-@Service(version = "1.0.0",timeout = 3000)
+//@Service(version = "1.0.0",timeout = 3000)
 public class TestServiceImpl implements TestService {
 
 

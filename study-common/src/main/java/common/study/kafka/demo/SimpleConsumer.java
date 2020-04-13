@@ -17,7 +17,7 @@ public class SimpleConsumer {
 
         Properties props = new Properties();
 
-        props.put("bootstrap.servers", "10.10.10.12:9092");
+        props.put("bootstrap.servers", "1000.200.100012:9092");
         props.put("group.id", "test4");
         props.put("enable.auto.commit", "false");
 //        props.put("auto.commit.interval.ms", "1000");

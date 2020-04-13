@@ -20,7 +20,7 @@ public class Query {
      * @return
      */
     public static void getTopicList() {
-        ZkUtils zkUtils = ZkUtils.apply("10.10.10.12:2179,10.10.10.12:2180,10.10.10.12:2181", 30000, 30000, JaasUtils.isZkSecurityEnabled());
+        ZkUtils zkUtils = ZkUtils.apply("1000.200.100012:2179,1000.200.100012:2180,1000.200.100012:2181", 30000, 30000, JaasUtils.isZkSecurityEnabled());
         List<String> allTopicList = JavaConversions.seqAsJavaList(zkUtils.getAllTopics());
         System.out.println(allTopicList.size());
         for (String topic : allTopicList) {
@@ -31,7 +31,7 @@ public class Query {
     }
 
     public static void main(String[] args) {
-        ZkUtils zkUtils = ZkUtils.apply("10.10.10.12:2179,10.10.10.12:2180,10.10.10.12:2181", 30000, 30000, JaasUtils.isZkSecurityEnabled());
+        ZkUtils zkUtils = ZkUtils.apply("1000.200.100012:2179,1000.200.100012:2180,1000.200.100012:2181", 30000, 30000, JaasUtils.isZkSecurityEnabled());
 // 获取topic 'test'的topic属性属性
         Properties props = AdminUtils.fetchEntityConfig(zkUtils, ConfigType.Topic(), "test");
 // 查询topic-level属性

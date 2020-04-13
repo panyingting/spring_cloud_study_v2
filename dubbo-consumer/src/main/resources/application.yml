@@ -9,7 +9,7 @@ spring:
       port: 2179 #提供注册的端口
     protocol:
       name: dubbo
-      port: 20890 #dubbo服务暴露的端口
+      port: 20880 #dubbo服务暴露的端口
     scan: com.study.dubbo.client.demo #扫描的包名
 # ————————————————
 #版权声明：本文为CSDN博主「赏花同学」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。

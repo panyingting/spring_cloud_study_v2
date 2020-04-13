@@ -17,7 +17,6 @@
         <module>common-study</module>
         <module>common-client</module>
         <module>study-common</module>
-        <module>study-kafka</module>
         <module>arithmetic</module>
     </modules>
     <parent>

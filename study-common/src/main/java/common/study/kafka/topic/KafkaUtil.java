@@ -30,7 +30,7 @@ public class KafkaUtil {
     public static void main(String[] args) {
 
         //zookeeper地址：端口号
-        String ZkStr = "10.10.10.12:2179,10.10.10.12:2180,10.10.10.12:2181";
+        String ZkStr = "1000.200.100012:2179,1000.200.100012:2180,1000.200.100012:2181";
 
         //topic对象
         KafkaTopicBean topic = new KafkaTopicBean();

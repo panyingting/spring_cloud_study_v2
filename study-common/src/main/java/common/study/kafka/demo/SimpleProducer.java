@@ -24,7 +24,7 @@ public class SimpleProducer {
         Properties props = new Properties();
 
         //Assign localhost id
-        props.put("bootstrap.servers", "10.10.10.12:9092");
+        props.put("bootstrap.servers", "1000.200.100012:9092");
 
         //Set acknowledgements for producer requests.
         props.put("acks", "all");
