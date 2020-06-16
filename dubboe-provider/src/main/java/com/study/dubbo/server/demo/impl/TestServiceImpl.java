@@ -3,6 +3,10 @@ package com.study.dubbo.server.demo.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.study.dubbo.server.demo.TestService;
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 //@Service(version = "1.0.0",timeout = 3000)
 public class TestServiceImpl implements TestService {
@@ -14,6 +18,13 @@ public class TestServiceImpl implements TestService {
     @Override
     public void testDubbo() {
         System.out.println("hello invoke。。。");
+    }
+
+    @Test
+    public void testMap(){
+        HashMap<String, String> map = new HashMap<>(1);
+        map.put("","");
+        System.out.println(map);
     }
 }
 

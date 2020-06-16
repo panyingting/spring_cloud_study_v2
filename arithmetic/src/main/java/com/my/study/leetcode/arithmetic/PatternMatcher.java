@@ -13,8 +13,16 @@ public class PatternMatcher {
 
         char pre = 0;
         int idxS = 0;
+        boolean all ;
         for(int i=0; i<p.length(); i++){
             if(p.charAt(i) == '.'){
+                idxS++;
+            }
+            else if(p.charAt(i) == '*'){
+                if(i == 0){
+                    return false;
+                }
+                pre = p.charAt(i-1);
 
             }
 

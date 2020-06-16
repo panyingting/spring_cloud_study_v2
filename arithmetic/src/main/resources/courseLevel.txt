@@ -1,0 +1,18 @@
+VERSION_3_STAGE_ONE(31, "Stage 1"),
+    VERSION_3_STAGE_TWO(32, "Stage 2"),
+    VERSION_3_STAGE_THREE(33, "Stage 3"),
+    VERSION_3_STAGE_FOUR(34, "Stage 4"),
+    VERSION_3_STAGE_FIVE(35, "Stage 5"),
+
+    VERSION_3_LEVEL_ONE(36, "Level 1"),
+    VERSION_3_LEVEL_TWO(37, "Level 2"),
+    VERSION_3_LEVEL_THREE(38, "Level 3"),
+    VERSION_3_LEVEL_FOUR(39, "Level 4"),
+    VERSION_3_LEVEL_FIVE(40, "Level 5"),
+    VERSION_3_LEVEL_SIX(41, "Level 6"),
+    VERSION_3_LEVEL_SEVEN(42, "Level 7"),
+    VERSION_3_LEVEL_EIGHT(43, "Level 8"),
+    VERSION_3_LEVEL_NINE(44, "Level 9"),
+    VERSION_3_LEVEL_TEN(45, "Level 10"),
+    VERSION_3_LEVEL_ELEVEN(46, "Level 11"),
+    VERSION_3_LEVEL_TWELVE(47, "Level 12");

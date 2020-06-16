@@ -20,6 +20,8 @@ public class MainTest {
     }
 
     @TestAnnotation()
-    public static void f(){}
+    public static void f(){
+
+    }
     
 }

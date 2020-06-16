@@ -17,10 +17,10 @@ public class SimpleConsumer {
 
         Properties props = new Properties();
 
-        props.put("bootstrap.servers", "1000.200.100012:9092");
-        props.put("group.id", "test4");
-        props.put("enable.auto.commit", "false");
-//        props.put("auto.commit.interval.ms", "1000");
+        props.put("bootstrap.servers", "10.10.10.112:9092");
+        props.put("group.id", "test");
+        props.put("enable.auto.commit", "true");
+        props.put("auto.commit.interval.ms", "1000");
         props.put("session.timeout.ms", "30000");
         props.put("key.deserializer",
                 "org.apache.kafka.common.serialization.StringDeserializer");
@@ -32,7 +32,7 @@ public class SimpleConsumer {
         consumer.subscribe(Arrays.asList(topicName));
 
         //print the topic name
-        System.out.println("Subscribed to topic plus; topicName:"+topicName);
+        System.out.println("Subscribed to topic plus; topicName");
         int i = 0;
 
         while (true) {
@@ -40,11 +40,8 @@ public class SimpleConsumer {
             for (ConsumerRecord<String, String> record : records)
 
                 // print the offset,key and value for the consumer records.
-                System.out.printf("partition: %s offset = %d, key = %s, value = %s\n",
-                        record.partition(), record.offset(), record.key(), record.value());
-//            consumer.commitAsync();
-//            break;
-
+                System.out.printf("offset = %d, key = %s, value = %s\n",
+                        record.offset(), record.key(), record.value());
         }
     }
 }

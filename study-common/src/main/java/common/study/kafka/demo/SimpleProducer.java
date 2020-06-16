@@ -24,13 +24,13 @@ public class SimpleProducer {
         Properties props = new Properties();
 
         //Assign localhost id
-        props.put("bootstrap.servers", "1000.200.100012:9092");
+        props.put("bootstrap.servers", "10.10.10.112:9092");
 
         //Set acknowledgements for producer requests.
         props.put("acks", "all");
 
         //If the request fails, the producer can automatically retry,
-        props.put("retries", 5);
+        props.put("retries", 0);
 
         //Specify buffer size in config
         props.put("batch.size", 16384);
@@ -46,11 +46,10 @@ public class SimpleProducer {
 
         props.put("value.serializer",
                 "org.apache.kafka.common.serialization.StringSerializer");
-        props.put("enable.idempotence","true");
+
         Producer<String, String> producer = new KafkaProducer<>(props);
 
-        Thread.sleep(1000);
-        for (int i = 100; i < 120; i++)
+        for (int i = 10; i < 20; i++)
             producer.send( new ProducerRecord<>(topicName,  Integer.toString(i)), (metadata, exception) ->{
                 System.out.println( String.format("执行完成，metadata:%s, exception:%s", metadata, exception));
             });

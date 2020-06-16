@@ -17,11 +17,23 @@ public class HessianController {
 
     @Resource
     private SayHelloHessian sayHelloHessian;
+    @Resource
+    private SayHelloHessian sayHelloHessian2;
 
     @RequestMapping("/sayHello")
     public String hello(){
 
         String greet = sayHelloHessian.sayHello(" Messi");
+
+        System.out.println(greet);
+
+        return  greet;
+    }
+
+    @RequestMapping("/age")
+    public String hello2( int age){
+
+        String greet = sayHelloHessian2.sayHello(age);
 
         System.out.println(greet);
 

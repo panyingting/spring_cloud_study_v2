@@ -56,7 +56,7 @@ public class KafkaProduce {
     public static void main(String[] args) {
 
         ZkUtils zkUtils;
-        String url = "1000.200.100012:9092";
+        String url = "10.10.10.44:9092";
         String topic = "partition_topic_01";
 
         //生产者

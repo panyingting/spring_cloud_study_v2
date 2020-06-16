@@ -13,4 +13,12 @@ public class SayHelloHessianImpl implements SayHelloHessian {
 
         return greet;
     }
+
+    @Override
+    public String sayHello(int age) {
+        String gree =  " hell for age:"+age;
+        System.out.println(gree);
+        return gree;
+
+    }
 }
