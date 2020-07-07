@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class Maintest {
 
@@ -28,8 +29,15 @@ public class Maintest {
         System.out.println("{\"hour\":15, \"minute\":0, \"channel\":1}");
 
 
+        System.out.println("date:"+new Date(1296000000+System.currentTimeMillis()));
 
 
+        System.out.println(1296000001/TimeUnit.DAYS.toMillis(1));
+        System.out.println(1296000001%TimeUnit.DAYS.toMillis(1));
+        System.out.println(TimeUnit.MILLISECONDS.toDays(111296000001L)/365);
+
+        System.out.println((1593853084389L - System.currentTimeMillis()));
+        System.out.println(TimeUnit.MILLISECONDS.toHours(1593853084389L - System.currentTimeMillis()));
         int hour;
         int minute;
         int channel;

@@ -3,32 +3,36 @@ package com.my.study.leetcode.arithmetic.page2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SolveNQueens {
-
+public class SolveNQueensII {
 
     private List<List<String>> queensList = new ArrayList<>();
-    public List<List<String>> solveNQueens(int n) {
 
-        recursionBackTracking(new ArrayList<>(), n);
+    public int totalNQueens(int n) {
 
-        return queensList;
+        boolean[] col = new boolean[n];
+        boolean[] left = new boolean[2*n];
+        boolean[] right = new boolean[2*n];
+        recursionBackTracking(new ArrayList<>(), n, col, left, right);
+
+        return queensList.size();
     }
 
-    private void recursionBackTracking(List<int[]> queensSite, int n){
+    private void recursionBackTracking(List<int[]> queensSite, int n, boolean[] col, boolean[] left, boolean[] right){
         if(queensSite.size() == n){
             fillQueens(queensSite);
             return;
         }
         int size = queensSite.size();
-        out:for(int j=0; j<n; j++){
-            for (int[] site : queensSite) {
-                if (j == site[1] || (size - site[0]) == Math.abs(j - site[1])) {
-                    continue out;
-                }
+        for(int j=0; j<n; j++){
+            if (col[j] || left[size + j] || right[n-j+size-1]) {
+                continue;
             }
+            col[j]  = left[size + j] = right[n-j+size-1] = true;
             int newSite[] = {size, j};
             queensSite.add(newSite);
-            recursionBackTracking(queensSite, n);
+
+            recursionBackTracking(queensSite, n, col, left, right);
+            col[j]  = left[size + j] = right[n-j+size-1] = false;
             queensSite.remove(size);
         }
     }
@@ -45,4 +49,5 @@ public class SolveNQueens {
         }
         queensList.add(stringList);
     }
+
 }

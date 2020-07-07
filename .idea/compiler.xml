@@ -15,6 +15,7 @@
         <module name="eurekaclient2" />
         <module name="eurekaserver" />
         <module name="feign" />
+        <module name="mysel-demo-starter" />
         <module name="study-common" />
       </profile>
     </annotationProcessing>
