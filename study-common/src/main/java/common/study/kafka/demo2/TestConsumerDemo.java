@@ -16,7 +16,7 @@ public class TestConsumerDemo {
         String topicName = "order-stat-push";
 
         Properties properties = new Properties();
-        properties.put("bootstrap.servers", "10.169.158.172:9092,10.169.158.207:9092");
+        properties.put("bootstrap.servers", "110.69.58.27:9092");
         properties.put("group.id", "20200701-2");
         properties.put("enable.auto.commit", "true");
         properties.put("auto.commit.interval.ms", "1000");
