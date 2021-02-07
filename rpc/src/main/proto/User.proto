@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_outer_classname="UserProtoBuf";
+option java_package="com.xxx.serial";
+message User{
+	int32 id=1;
+	string name=2;
+	int32 age=3;
+	string mobile=4;
+	int32 age2=5;
+	int32 age3=6;
+	float money=7;
+	double tall=8;
+	int32 age4=9;
+}

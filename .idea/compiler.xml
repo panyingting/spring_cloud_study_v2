@@ -6,21 +6,41 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="arithmetic" />
-        <module name="common-client" />
-        <module name="common-study" />
-        <module name="dubbo-consumer" />
-        <module name="dubboeprovider" />
-        <module name="eurekaclient1" />
+        <module name="rpc" />
         <module name="eurekaclient2" />
-        <module name="eurekaserver" />
-        <module name="feign" />
+        <module name="eurekaclient1" />
+        <module name="arithmetic" />
+        <module name="eureka-client2" />
+        <module name="eureka-client1" />
         <module name="mysel-demo-starter" />
+        <module name="eureka-server" />
+        <module name="common-study" />
         <module name="study-common" />
+        <module name="eurekaserver" />
+        <module name="dubboeprovider" />
+        <module name="dubboe-provider" />
+        <module name="common-client" />
+        <module name="feign" />
+        <module name="dubbo-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="study-kafka" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="arithmetic" options="-parameters" />
+      <module name="common-client" options="-parameters" />
+      <module name="common-study" options="-parameters" />
+      <module name="dubbo-consumer" options="-parameters" />
+      <module name="dubboe-provider" options="-parameters" />
+      <module name="eureka-client1" options="-parameters" />
+      <module name="eureka-client2" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="feign" options="-parameters" />
+      <module name="rpc" options="-parameters" />
+      <module name="study-common" options="-parameters" />
+    </option>
   </component>
 </project>

@@ -19,6 +19,7 @@
         <module>study-common</module>
         <module>arithmetic</module>
         <module>mysel-demo-starter</module>
+        <module>rpc</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

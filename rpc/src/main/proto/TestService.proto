@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+option java_package = "java_test";
+option java_multiple_files = true;
+
+service TestService
+{
+    rpc method(Request) returns (Result){}
+
+    rpc methodRequestStream(stream Request) returns (Result) {}
+
+    rpc methodResultStream(Request) returns (stream Result){}
+
+    rpc methodDoubleStream(stream Request) returns (stream Result){}
+
+    rpc methodDoubleStream2(stream Request) returns (stream Result){}
+
+
+}
+
+message Request
+{
+    string request1 = 1;
+    string request2 = 2;
+    int32 age=3;
+    string mobile=4;
+    	int32 age2=5;
+    	int32 age3=6;
+    	double money=7;
+    	double tall=8;
+    	int32 age4=9;
+
+
+}
+
+message Result
+{
+    string result1 = 1;
+    string result2 = 2;
+}
+
+message ReqUser
+{
+	int32 age=3;
+	string mobile=4;
+	int32 age2=5;
+	int32 age3=6;
+	float money=7;
+	double tall=8;
+	int32 age4=9;
+}

@@ -3,15 +3,26 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/arithmetic" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/arithmetic/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-study" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-study/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubbo-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubboe-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubboe-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-client1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-client1/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-client2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-client2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/feign/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mysel-demo-starter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rpc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/study-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/study-common/src/main/java" charset="UTF-8" />
   </component>
 </project>
