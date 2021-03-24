@@ -8,6 +8,7 @@ public class User {
     //序列化传输的时候必须要有空构造方法，不然会出错
     public User() {
     }
+
     public User(String name, Integer age) {
         this.name = name;
         this.age = age;

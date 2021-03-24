@@ -22,7 +22,7 @@ import java.net.UnknownHostException;
 public class EsClient implements FactoryBean<TransportClient>, InitializingBean, DisposableBean {
     private static final Logger logger = LoggerFactory.getLogger(EsClient.class);
     @Value("${spring.data.elasticsearch.cluster-nodes}")
-    private String clusterNodes ;
+    private String clusterNodes;
 
     @Value("${spring.data.elasticsearch.cluster-name}")
     private String clusterName;
@@ -61,16 +61,16 @@ public class EsClient implements FactoryBean<TransportClient>, InitializingBean,
         buildClient();
     }
 
-    protected void buildClient()  {
+    protected void buildClient() {
         try {
             PreBuiltTransportClient preBuiltTransportClient = new PreBuiltTransportClient(settings());
-            if (!"".equals(clusterNodes)){
-                for (String nodes:clusterNodes.split(",")) {
-                    String InetSocket [] = nodes.split(":");
-                    String  Address = InetSocket[0];
-                    Integer  port = Integer.valueOf(InetSocket[1]);
+            if (!"".equals(clusterNodes)) {
+                for (String nodes : clusterNodes.split(",")) {
+                    String InetSocket[] = nodes.split(":");
+                    String Address = InetSocket[0];
+                    Integer port = Integer.valueOf(InetSocket[1]);
                     preBuiltTransportClient.addTransportAddress(new
-                            InetSocketTransportAddress(InetAddress.getByName(Address),port ));
+                            InetSocketTransportAddress(InetAddress.getByName(Address), port));
                 }
                 client = preBuiltTransportClient;
             }
@@ -78,13 +78,14 @@ public class EsClient implements FactoryBean<TransportClient>, InitializingBean,
             logger.error(e.getMessage());
         }
     }
+
     /**
      * 初始化默认的client
      */
-    private Settings settings(){
+    private Settings settings() {
         Settings settings = Settings.builder()
-                .put("cluster.name",clusterName)
-                .put("client.transport.sniff",true)
+                .put("cluster.name", clusterName)
+                .put("client.transport.sniff", true)
                 .build();
         client = new PreBuiltTransportClient(settings);
         return settings;

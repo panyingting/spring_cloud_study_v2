@@ -1,13 +1,13 @@
 package common.study.hsqldb;
 
+import org.hsqldb.Server;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import org.hsqldb.Server;
 
 /**
  * 方便单机程序使用HSQL的工具类，包括启动，关闭，连接。数据库默认不加密，用户为sa，密码空

@@ -17,7 +17,7 @@ public class LockTest {
         lock.lock();
         try {
             System.out.println("lock");
-        }finally {
+        } finally {
             lock.unlock();
         }
 
@@ -27,9 +27,9 @@ public class LockTest {
     @Test
     public void test() throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        for(int i=0; i<3; i++)
-            new Thread(){
-                public void run(){
+        for (int i = 0; i < 3; i++)
+            new Thread() {
+                public void run() {
                     try {
                         countDownLatch.await();
                     } catch (InterruptedException e) {

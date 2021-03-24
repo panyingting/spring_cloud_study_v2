@@ -50,14 +50,13 @@ public class SimpleProducer {
         Producer<String, String> producer = new KafkaProducer<>(props);
 
         for (int i = 10; i < 20; i++)
-            producer.send( new ProducerRecord<>(topicName,  Integer.toString(i)), (metadata, exception) ->{
-                System.out.println( String.format("执行完成，metadata:%s, exception:%s", metadata, exception));
+            producer.send(new ProducerRecord<>(topicName, Integer.toString(i)), (metadata, exception) -> {
+                System.out.println(String.format("执行完成，metadata:%s, exception:%s", metadata, exception));
             });
 
         System.out.println("Message sent successfully");
         producer.close();
     }
-
 
 
 }

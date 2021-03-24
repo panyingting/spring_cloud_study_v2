@@ -13,7 +13,7 @@ public class Test {
         System.out.println(String.format("当前您商品库存不足，您还可购买%ss个，请重新选择后再下单", "ww"));
 
 
-        System.out.println(1<<3);
+        System.out.println(1 << 3);
 
 
         int i = 3;

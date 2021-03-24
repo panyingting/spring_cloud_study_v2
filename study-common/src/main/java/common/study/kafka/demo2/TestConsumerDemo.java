@@ -12,7 +12,7 @@ import java.util.Properties;
 public class TestConsumerDemo {
 
     @Test
-    public void test(){
+    public void test() {
         String topicName = "order-stat-push";
 
         Properties properties = new Properties();
@@ -27,7 +27,7 @@ public class TestConsumerDemo {
 
         KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<>(properties);
 //        kafkaConsumer.subscribe(Arrays.asList(topicName));
-        kafkaConsumer.assign( Arrays.asList( new TopicPartition(topicName, 0)));
+        kafkaConsumer.assign(Arrays.asList(new TopicPartition(topicName, 0)));
         kafkaConsumer.seek(new TopicPartition(topicName, 0), 593854);
         while (true) {
             ConsumerRecords<String, String> records = kafkaConsumer.poll(100);

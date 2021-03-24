@@ -1,31 +1,42 @@
 package common.study.main;
 
-import common.study.entity.One;
-import common.study.entity.Two;
-import common.study.option.ParsedEntity;
-import common.study.option.ServiceResponse;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class MainDemo {
 
     public static void main(String[] args) {
-        ServiceResponse<List<ParsedEntity<One, Two>>> listServiceResponse = new ServiceResponse<>();
-        ParsedEntity<One, Two> parsedEntity = new ParsedEntity<>();
-        List<ParsedEntity<One, Two>> list = new ArrayList<>();
-        list.add(parsedEntity);
-        listServiceResponse.setData(list);
 
-        parsedEntity.setEntity(new One());
+        // Map [1e] [2->value] [3] [6]
+        // Map:  1 - 100
+        // Map:  key - value
+        // Map:  key - value
 
-        One orderItemEntity = Optional.ofNullable(listServiceResponse)
-                .map(ServiceResponse::getData)
-                .map(lt -> lt.get(0))
-                .map(ParsedEntity::getEntity)
-                .orElse(null);
+        Map<Integer, Object> map = new HashMap<>();
+        map.put(3, 100);
+        map.put(19, 200);
+        map.put(35, 300);
 
-        System.out.println(orderItemEntity);
+        int[] arr = new int[1];
+        arr[0] = 1;
+
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+
+        int i = 1;
+        Integer integer = i;
+
+
+        List<Long> list2 = new ArrayList<>();
+
+
+        // set
+
+        Set<Object> set = new HashSet<>();
+        set.add(1);
+
+        System.out.println(map.get(1));
+
+
     }
 }

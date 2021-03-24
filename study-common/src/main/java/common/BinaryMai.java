@@ -1,7 +1,6 @@
 package common;
 
 import com.alibaba.fastjson.JSON;
-import kafka.utils.json.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,10 +15,10 @@ public class BinaryMai {
     }
 
 
-    public static String process(String param){
+    public static String process(String param) {
 
-        try{
-            if(param != null && param.contains("thirdPartyRefundNo")){
+        try {
+            if (param != null && param.contains("thirdPartyRefundNo")) {
                 LOGGER.info("退款单数据修复，param:{}", param);
                 doProcess(param);
                 return "执行成功";
@@ -29,23 +28,23 @@ public class BinaryMai {
 
             String logLine[] = log.split("begin");
 
-            for(String line: logLine){
-                try{
+            for (String line : logLine) {
+                try {
                     String mark = "process msg:";
-                    int index = line.indexOf(mark)+ mark.length();
-                    if(index <= 0){
+                    int index = line.indexOf(mark) + mark.length();
+                    if (index <= 0) {
                         continue;
                     }
                     String jsonStr = line.substring(index);
                     doProcess(jsonStr);
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     LOGGER.warn("内层异常-退款订单数据修复失败， line：{}", line, ex);
                     return ex.getMessage();
                 }
             }
 
-            return "数据执行成功，length:"+ logLine.length;
-        }catch (Exception ex){
+            return "数据执行成功，length:" + logLine.length;
+        } catch (Exception ex) {
             LOGGER.warn("外层异常-退款订单数据修复失败", ex);
             return ex.getMessage();
         }
@@ -58,13 +57,12 @@ public class BinaryMai {
 
         RefundSuccessMsg msg = JSON.parseObject(message, RefundSuccessMsg.class);
 
-        System.out.println(""+msg.getRefundNo());
+        System.out.println("" + msg.getRefundNo());
 
     }
 
 
-
-    private static String getLogString(){
+    private static String getLogString() {
 
         return "2019/11/08-10:16:21.782 INFO  [kafka-consumer-refund-success-4-thread-1] com.babyfs.retailers.app.consumer.pay.RefundSuccessEventProcessor:39>>process msg:{\"orderNo\":\"2019110810123334262149\",\"refundFee\":700,\"refundNo\":\"2019110810153435262148\",\"refundTime\":1573179381158,\"thirdPartyRefundNo\":\"2019110822001428540511014194\"} begin\n" +
                 "2019/11/01-11:09:55.995 INFO [kafka-consumer-refund-success-4-thread-2] com.babyfs.retailers.app.consumer.pay.RefundSuccessEventProcessor:39>>process msg:{\"orderNo\":\"2019110110383334263116\",\"refundFee\":6006,\"refundNo\":\"2019110110423435262170\",\"refundTime\":1572577795433,\"thirdPartyRefundNo\":\"2019110122001485740501903117\"} begin\n" +

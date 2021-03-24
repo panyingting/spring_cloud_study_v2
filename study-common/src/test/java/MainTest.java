@@ -1,5 +1,3 @@
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -17,9 +15,9 @@ public class MainTest {
         service.shutdown();
 
         System.out.println("=====");
-        System.out.println(1<<0);
-        System.out.println(1<<1);
-        System.out.println(1<<2);
+        System.out.println(1 << 0);
+        System.out.println(1 << 1);
+        System.out.println(1 << 2);
 
         System.out.println(new Date(1573637851000L));
 
@@ -27,14 +25,12 @@ public class MainTest {
     }
 
 
-    private static class MyRunnable implements Runnable{
+    private static class MyRunnable implements Runnable {
 
-        public void run(){
-            System.out.println("执行成功" );
+        public void run() {
+            System.out.println("执行成功");
         }
     }
-
-
 
 
 }
