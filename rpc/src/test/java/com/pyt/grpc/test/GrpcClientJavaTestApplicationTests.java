@@ -15,12 +15,9 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author : Pan Yingting
  * @date : 2021/1/10 5:42 下午
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
 public class GrpcClientJavaTestApplicationTests {
 
-    @Autowired
-    private JavaGrpcClient javaGrpcClient;
+    private JavaGrpcClient javaGrpcClient = new JavaGrpcClient();
 
     @Test
     public void testServiceBlockingStub() {
@@ -42,6 +39,12 @@ public class GrpcClientJavaTestApplicationTests {
     @Test
     public void methodDoubleStream() {
         javaGrpcClient.methodDoubleStream();
+    }
+
+
+    @Test
+    public void getFromRpc() {
+        javaGrpcClient.getFromRpc();
     }
 
 }

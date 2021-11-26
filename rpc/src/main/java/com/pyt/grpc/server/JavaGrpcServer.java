@@ -99,6 +99,7 @@ public class JavaGrpcServer  extends TestServiceGrpc.TestServiceImplBase impleme
     public void afterPropertiesSet() throws Exception {
         ServerBuilder.forPort(2)
                 .addService(new JavaGrpcServer())
+                .addService(new PerformanceTestServiceServer())
                 .build()
                 .start();
     }

@@ -30,14 +30,16 @@ public class RotateRight {
 
     }
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
         ListNode(int x) { val = x; }
 
+        @Override
         public String toString(){
-            if(next != null)
+            if(next != null) {
                 return val +"->"+next;
+            }
             return String.valueOf(val);
         }
     }

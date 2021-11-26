@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_package = "demo.test";
+option java_multiple_files = true;
+
+service PerformanceTestService
+{
+    rpc performanceTest(RequestDemo) returns (DemoResult){}
+
+    rpc anotherRpcMethod(RequestDemo) returns (DemoModel){}
+}
+
+
+message RequestDemo
+{
+    string uid = 1;
+    int32 categoryId=2;
+}
+
+message DemoResult
+{
+    repeated DemoModel demoModels = 1;
+}
+message DemoModel
+{
+    int32 productCode = 1;
+    int32 count = 2;
+    string buyWay = 3;
+    string sn = 4;
+    int32 priceChannel = 5;
+    string usedPeriod = 6;
+}

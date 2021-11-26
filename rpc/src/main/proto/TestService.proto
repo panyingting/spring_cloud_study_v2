@@ -15,6 +15,7 @@ service TestService
 
     rpc methodDoubleStream2(stream Request) returns (stream Result){}
 
+    rpc getUsers(Request) returns (stream Result){}
 
 }
 

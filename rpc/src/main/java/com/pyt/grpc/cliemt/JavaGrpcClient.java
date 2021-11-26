@@ -4,6 +4,9 @@ package com.pyt.grpc.cliemt;
  * @author : Pan Yingting
  * @date : 2021/1/10 5:41 下午
  */
+import demo.test.DemoResult;
+import demo.test.PerformanceTestServiceGrpc;
+import demo.test.RequestDemo;
 import io.grpc.Channel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
@@ -13,6 +16,8 @@ import java_test.TestServiceGrpc;
 import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Component
 public class JavaGrpcClient
@@ -21,6 +26,7 @@ public class JavaGrpcClient
 
     TestServiceGrpc.TestServiceBlockingStub testServiceBlockingStub = TestServiceGrpc.newBlockingStub(channel);
     TestServiceGrpc.TestServiceStub testServiceStub = TestServiceGrpc.newStub(channel);
+    PerformanceTestServiceGrpc.PerformanceTestServiceBlockingStub performanceTestServiceBlockingStub = PerformanceTestServiceGrpc.newBlockingStub(channel);
 
     public Result testServiceBlockingStub()
     {
@@ -118,6 +124,22 @@ public class JavaGrpcClient
             Thread.sleep(6000);
         }
         catch (Exception ex){}
+    }
+
+    public void getFromRpc(){
+        RequestDemo requestDemo = RequestDemo.newBuilder().setCategoryId(1231).setUid("3wer2").build();
+        for (int i = 0; i < 1000; i++) {
+            DemoResult demoResult = performanceTestServiceBlockingStub.performanceTest(requestDemo);
+        }
+
+        long mills = System.currentTimeMillis();
+        for (int i = 0; i < 100; i++) {
+            DemoResult demoResult = performanceTestServiceBlockingStub.performanceTest(requestDemo);
+        }
+        long cost = System.currentTimeMillis() - mills;
+
+        System.out.println("商城rpc调用100次花费时间：" + cost);
+
     }
 
 
