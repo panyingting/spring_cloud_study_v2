@@ -15,7 +15,7 @@ public class CheckUtils {
      * @param num 数字
      * @param msg 异常描述信息
      */
-    public static void checkIfNotPositive(Number num, String msg) {
+    public static void isPositiveAssert(Number num, String msg) {
         if (num == null || num.doubleValue() <= 0) {
             throw new WbBusinessException(msg);
         }
@@ -27,20 +27,20 @@ public class CheckUtils {
      * @param expression 表达式
      * @param msg        异常描述信息
      */
-    public static void checkIfTrue(boolean expression, String msg) {
-        if (expression) {
+    public static void trueAssert(boolean expression, String msg) {
+        if (!expression) {
             throw new WbBusinessException(msg);
         }
     }
 
-    public static void checkIfTrue(boolean expression, WbBusinessExceptionEnum exceptionCode) {
-        if (expression) {
+    public static void trueAssert(boolean expression, WbBusinessExceptionEnum exceptionCode) {
+        if (!expression) {
             throw new WbBusinessException(exceptionCode);
         }
     }
 
-    public static void checkIfTrue(boolean expression, int code, String msg, Object data) {
-        if (expression) {
+    public static void trueAssert(boolean expression, int code, String msg, Object data) {
+        if (!expression) {
             throw new WbBusinessException(code, msg, data);
         }
     }
@@ -51,13 +51,13 @@ public class CheckUtils {
      * @param object 对象
      * @param msg    异常描述信息
      */
-    public static void checkIfNull(Object object, String msg) {
+    public static void notNullAssert(Object object, String msg) {
         if (object == null) {
             throw new WbBusinessException(msg);
         }
     }
 
-    public static void checkIfNull(Object object, WbBusinessExceptionEnum exceptionCode) {
+    public static void notNullAssert(Object object, WbBusinessExceptionEnum exceptionCode) {
         if (object == null) {
             throw new WbBusinessException(exceptionCode);
         }
@@ -69,13 +69,13 @@ public class CheckUtils {
      * @param obj 集合对象
      * @param msg 异常描述信息
      */
-    public static void checkIfEmpty(Collection<?> obj, String msg) {
+    public static void notEmptyAssert(Collection<?> obj, String msg) {
         if (obj == null || obj.isEmpty()) {
             throw new WbBusinessException(msg);
         }
     }
 
-    public static void checkIfEmpty(Collection<?> obj, WbBusinessExceptionEnum exceptionCode) {
+    public static void notEmptyAssert(Collection<?> obj, WbBusinessExceptionEnum exceptionCode) {
         if (obj == null || obj.isEmpty()) {
             throw new WbBusinessException(exceptionCode);
         }
@@ -87,37 +87,37 @@ public class CheckUtils {
      * @param obj 字符串对象
      * @param msg 异常描述信息
      */
-    public static void checkIfEmpty(String obj, String msg) {
+    public static void notEmptyAssert(String obj, String msg) {
         if (obj == null || obj.isEmpty()) {
             throw new WbBusinessException(msg);
         }
     }
 
-    public static void checkIfEmpty(String obj, WbBusinessExceptionEnum exceptionCode) {
+    public static void notEmptyAssert(String obj, WbBusinessExceptionEnum exceptionCode) {
         if (obj == null || obj.length() == 0) {
             throw new WbBusinessException(exceptionCode);
         }
     }
 
-    public static void checkIfEmpty(Map<?, ?> obj, String msg) {
+    public static void notEmptyAssert(Map<?, ?> obj, String msg) {
         if (obj == null || obj.isEmpty()) {
             throw new WbBusinessException(msg);
         }
     }
 
     /**
-     * 集合有多个值时返回错误信息，一般配合 checkIfEmpty 一起使用来判断集合只有一个值；
+     * 集合有多个值时返回错误信息，一般配合 notEmptyAssert 一起使用来判断集合只有一个值；
      *
      * @param obj 集合对象
      * @param msg 异常描述信息
      */
-    public static void checkMultiValue(Collection<?> obj, String msg) {
+    public static void notMultiValueAssert(Collection<?> obj, String msg) {
         if (obj != null && obj.size() > 1) {
             throw new WbBusinessException(msg);
         }
     }
 
-    public static void checkMultiValue(Collection<?> obj, WbBusinessExceptionEnum exceptionCode) {
+    public static void notMultiValueAssert(Collection<?> obj, WbBusinessExceptionEnum exceptionCode) {
         if (obj != null && obj.size() > 1) {
             throw new WbBusinessException(exceptionCode);
         }

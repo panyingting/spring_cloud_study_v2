@@ -122,7 +122,7 @@ public class UserEntityExcelParseHandler extends AbstractUserEntityExcelParseHan
     private File createLocalFile(String uploadFilename) throws IOException {
         File uploadFile = new File(this.getClass().getResource("").getPath() + File.separator + uploadFilename);
         if (uploadFile.exists()) {
-            CheckUtils.checkIfTrue(!uploadFile.delete(), "文件名已被占用，请换文件名后再试！");
+            CheckUtils.trueAssert(!uploadFile.delete(), "文件名已被占用，请换文件名后再试！");
         }
         boolean created = uploadFile.createNewFile();
         if (!created) {

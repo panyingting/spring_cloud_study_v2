@@ -2,35 +2,23 @@ import java.util.Date;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
 public class MainTest {
 
     public static void main(String[] args) {
 
+        String TABLE_NAME = "jsd_loan_order";
 
-        ScheduledExecutorService service = Executors.newScheduledThreadPool(2);
+        Pattern pattern = Pattern.compile("\\W+"+TABLE_NAME+"\\W+", Pattern.CASE_INSENSITIVE);
 
-        service.schedule(new MyRunnable(), 3, TimeUnit.SECONDS);
-        service.schedule(new MyRunnable(), 5, TimeUnit.SECONDS);
-        service.shutdown();
-
-        System.out.println("=====");
-        System.out.println(1 << 0);
-        System.out.println(1 << 1);
-        System.out.println(1 << 2);
-
-        System.out.println(new Date(1573637851000L));
+        String sql = "select * from jsd_loan_oRDER where";
+        System.out.println(pattern.matcher(sql).find());
+        System.out.println(pattern.matcher(sql));
 
 
     }
 
-
-    private static class MyRunnable implements Runnable {
-
-        public void run() {
-            System.out.println("执行成功");
-        }
-    }
 
 
 }

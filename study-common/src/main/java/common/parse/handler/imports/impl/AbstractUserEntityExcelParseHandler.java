@@ -49,7 +49,7 @@ public abstract class AbstractUserEntityExcelParseHandler extends AbstractExcelP
         List<ExcelUserEntity> userEntities = context.getEntityList();
         ConcurrentHashMap<Long, Long> checkRepeatMap = new ConcurrentHashMap<>(userEntities.size());
 
-        CheckUtils.checkIfEmpty(userEntities, "Excel 内容不能为空！");
+        CheckUtils.notEmptyAssert(userEntities, "Excel 内容不能为空！");
 
         int totalData = userEntities.size();
 

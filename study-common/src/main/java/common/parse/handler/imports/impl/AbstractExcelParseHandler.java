@@ -81,7 +81,7 @@ public abstract class AbstractExcelParseHandler<T> implements ExcelImportHandler
     private void parse(ExcelParseContext<T> context) {
 
         String uploadFilename = context.getUploadFilename();
-        CheckUtils.checkIfNull(uploadFilename, "请为上下文设置上传文件名称");
+        CheckUtils.notNullAssert(uploadFilename, "请为上下文设置上传文件名称");
         logger.info("Excel解析-开始解析文件内容，fileName:{}", uploadFilename);
         Workbook workbook;
         try {
@@ -99,8 +99,8 @@ public abstract class AbstractExcelParseHandler<T> implements ExcelImportHandler
         String userPin = "获取用户";
         int lastRowNum = sheet.getLastRowNum();
 
-        CheckUtils.checkIfTrue(lastRowNum < context.getBeginRowNum(), "导入模板数据不能为空！");
-        CheckUtils.checkIfTrue(lastRowNum > MAX_LINE, "导入最大行数不能超过" + MAX_LINE + "行");
+        CheckUtils.trueAssert(lastRowNum > context.getBeginRowNum(), "导入模板数据不能为空！");
+        CheckUtils.trueAssert(lastRowNum < MAX_LINE, "导入最大行数不能超过" + MAX_LINE + "行");
 
         //循环除了第一行的所有行
         try {
