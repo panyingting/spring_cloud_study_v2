@@ -29,10 +29,11 @@ public class NioServer {
         socketChannel.socket().bind(new InetSocketAddress(port), 80);
         socketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
+        int count = 0;
         int num = 0;
         while (true) {
             num++;
-            selector.select();
+            selector.select(100);
             Thread.sleep(300L);
             Set<SelectionKey> selectionKeySet = selector.selectedKeys();
 
@@ -53,24 +54,29 @@ public class NioServer {
 
 
             }
-            if (num % 3 == 0) {
-                subSelector.select();
+            {
+                subSelector.select(100);
                 Set<SelectionKey> keys = subSelector.selectedKeys();
                 System.out.println("keys size--------:" + keys.size());
                 Iterator<SelectionKey> subIterator = keys.iterator();
 
+
                 while (subIterator.hasNext()) {
                     SelectionKey selectionKey = subIterator.next();
-                    subIterator.remove();
+//                    subIterator.remove();
 
-
+                    count++;
                     if (selectionKey.isReadable()) {
                         SocketChannel socket = (SocketChannel) selectionKey.channel();
-                        ByteBuffer buffer = ByteBuffer.allocate(1024);
-                        int read = socket.read(buffer);
-                        buffer.flip();
 
-                        System.out.println(selectionKey.attachment() + "/" + buffer.get());
+                        if ((count % 3) == 0) {
+                            ByteBuffer buffer = ByteBuffer.allocate(48);
+                            int read = socket.read(buffer);
+                            buffer.flip();
+
+                            System.out.println(selectionKey.attachment() + "/" + buffer.getInt());
+                        }
+
 //                        if(read > 0){
 //                            byte[] bytes = new byte[buffer.remaining()];
 //                            int intVal = buffer.get();

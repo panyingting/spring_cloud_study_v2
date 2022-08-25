@@ -11,21 +11,21 @@
         <module name="eurekaclient2" />
         <module name="eurekaclient1" />
         <module name="arithmetic" />
-        <module name="eureka-client2" />
-        <module name="eureka-client1" />
-        <module name="mysel-demo-starter" />
-        <module name="eureka-server" />
         <module name="common-study" />
         <module name="study-common" />
         <module name="eurekaserver" />
         <module name="dubboeprovider" />
         <module name="dubboe-provider" />
-        <module name="common-client" />
         <module name="feign" />
+        <module name="common-client" />
         <module name="dubbo-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="eureka-client1" target="1.8" />
+      <module name="eureka-client2" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="mysel-demo-starter" target="1.5" />
       <module name="study-kafka" target="1.8" />
     </bytecodeTargetLevel>
   </component>

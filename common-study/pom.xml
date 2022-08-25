@@ -42,12 +42,6 @@
         </dependency>
 
         <dependency>
-            <version>1.0-SNAPSHOT</version>
-            <groupId>com.pyt</groupId>
-            <artifactId>mysel-demo-starter</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>19.0</version>

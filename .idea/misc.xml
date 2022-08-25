@@ -9,7 +9,10 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/study-kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-client1/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-client2/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/mysel-demo-starter/pom.xml" />
       </set>
     </option>
   </component>

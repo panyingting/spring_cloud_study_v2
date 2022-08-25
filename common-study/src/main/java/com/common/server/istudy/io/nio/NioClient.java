@@ -87,20 +87,24 @@ public class NioClient {
 
     private static void send(SocketChannel sc, int val) throws IOException {
 
-        ByteBuffer buffer = ByteBuffer.allocate(8);
-        buffer.putInt(1231);
-        buffer.flip();
-        sc.write(buffer);
-        if (!buffer.hasRemaining())
-            logger.info("给服务器发送信息成功！");
+        for (int i = 0; i < 10; i++) {
+            ByteBuffer buffer = ByteBuffer.allocate(12);
+            buffer.putInt(i*10);
+            buffer.putInt(i*10+1);
+            buffer.putInt(i*10+2);
+            buffer.flip();
+            sc.write(buffer);
+            if (!buffer.hasRemaining()) {
+                logger.info("给服务器发送信息成功！");
+            }
+        }
+
 
     }
 
     public static void main(String[] args) throws InterruptedException {
 
-        for (int i = 0; i < 10; i++) {
-            connet("127.0.0.1", 8001);
-        }
+        connet("127.0.0.1", 8001);
 
         Thread.sleep(20000L);
     }
